@@ -1,0 +1,649 @@
+{
+  "n_images": 1000,
+  "n_patients": 1000,
+  "run": "nih10000_bce_gpu",
+  "mean_auroc": 0.8190499510469417,
+  "mean_auroc_ci": [
+    0.7976040491536529,
+    0.8359568603492228
+  ],
+  "per_class": {
+    "Atelectasis": {
+      "auroc": 0.8169565217391305,
+      "auroc_ci": [
+        0.7728440578931204,
+        0.8557277007965759
+      ],
+      "auprc": 0.31922083153475567,
+      "prevalence": 0.07999999821186066,
+      "n_pos": 80,
+      "precision": 0.22797927461139897,
+      "recall": 0.55,
+      "specificity": 0.8380434782608696,
+      "f1": 0.32234432234432236
+    },
+    "Cardiomegaly": {
+      "auroc": 0.8949278262493663,
+      "auroc_ci": [
+        0.8510196327285262,
+        0.9441337568706814
+      ],
+      "auprc": 0.37106597961518445,
+      "prevalence": 0.039000000804662704,
+      "n_pos": 39,
+      "precision": 0.4411764705882353,
+      "recall": 0.38461538461538464,
+      "specificity": 0.9802289281997919,
+      "f1": 0.4109589041095891
+    },
+    "Effusion": {
+      "auroc": 0.9304608294930876,
+      "auroc_ci": [
+        0.8984806182682857,
+        0.9562960287746104
+      ],
+      "auprc": 0.5336029352706128,
+      "prevalence": 0.07000000029802322,
+      "n_pos": 70,
+      "precision": 0.3873239436619718,
+      "recall": 0.7857142857142857,
+      "specificity": 0.9064516129032258,
+      "f1": 0.5188679245283018
+    },
+    "Infiltration": {
+      "auroc": 0.585690636044724,
+      "auroc_ci": [
+        0.5129979938139242,
+        0.6569677318596027
+      ],
+      "auprc": 0.18105832214041973,
+      "prevalence": 0.08299999684095383,
+      "n_pos": 83,
+      "precision": 0.0889967637540453,
+      "recall": 0.6626506024096386,
+      "specificity": 0.386041439476554,
+      "f1": 0.15691868758915833
+    },
+    "Mass": {
+      "auroc": 0.8245900051652891,
+      "auroc_ci": [
+        0.7501682524947784,
+        0.8960306210131149
+      ],
+      "auprc": 0.23883512343202087,
+      "prevalence": 0.03200000151991844,
+      "n_pos": 32,
+      "precision": 0.1297709923664122,
+      "recall": 0.53125,
+      "specificity": 0.8822314049586777,
+      "f1": 0.2085889570552147
+    },
+    "Nodule": {
+      "auroc": 0.7052258403361344,
+      "auroc_ci": [
+        0.6269998528623109,
+        0.7786878258733417
+      ],
+      "auprc": 0.24984823260294603,
+      "prevalence": 0.04800000041723251,
+      "n_pos": 48,
+      "precision": 0.13274336283185842,
+      "recall": 0.3125,
+      "specificity": 0.8970588235294118,
+      "f1": 0.1863354037267081
+    },
+    "Pneumonia": {
+      "auroc": 0.8937264560996812,
+      "auroc_ci": [
+        0.8403283897577936,
+        0.9408869767870666
+      ],
+      "auprc": 0.09212335784154542,
+      "prevalence": 0.014000000432133675,
+      "n_pos": 14,
+      "precision": 0.11428571428571428,
+      "recall": 0.2857142857142857,
+      "specificity": 0.9685598377281948,
+      "f1": 0.16326530612244897
+    },
+    "Pneumothorax": {
+      "auroc": 0.8564882474729022,
+      "auroc_ci": [
+        0.7844203713481913,
+        0.9247895840545388
+      ],
+      "auprc": 0.26397120803375484,
+      "prevalence": 0.03400000184774399,
+      "n_pos": 34,
+      "precision": 0.2916666666666667,
+      "recall": 0.4117647058823529,
+      "specificity": 0.9648033126293996,
+      "f1": 0.34146341463414637
+    },
+    "Consolidation": {
+      "auroc": 0.7982955809710294,
+      "auroc_ci": [
+        0.7038786165620095,
+        0.8796084872444873
+      ],
+      "auprc": 0.07242643422684542,
+      "prevalence": 0.023000000044703484,
+      "n_pos": 23,
+      "precision": 0.058823529411764705,
+      "recall": 0.13043478260869565,
+      "specificity": 0.9508700102354145,
+      "f1": 0.08108108108108109
+    },
+    "Edema": {
+      "auroc": 0.8804040404040404,
+      "auroc_ci": [
+        0.8156642037673292,
+        0.9366404545949786
+      ],
+      "auprc": 0.05427038123466049,
+      "prevalence": 0.009999999776482582,
+      "n_pos": 10,
+      "precision": 0.045454545454545456,
+      "recall": 0.1,
+      "specificity": 0.9787878787878788,
+      "f1": 0.06250000000000001
+    },
+    "Emphysema": {
+      "auroc": 0.8554254356189182,
+      "auroc_ci": [
+        0.7691213655476408,
+        0.9295301043862467
+      ],
+      "auprc": 0.1700952134362909,
+      "prevalence": 0.017999999225139618,
+      "n_pos": 18,
+      "precision": 0.17647058823529413,
+      "recall": 0.5,
+      "specificity": 0.9572301425661914,
+      "f1": 0.2608695652173913
+    },
+    "Fibrosis": {
+      "auroc": 0.7846938775510204,
+      "auroc_ci": [
+        0.6923067602040817,
+        0.8722418834964427
+      ],
+      "auprc": 0.2094540022994066,
+      "prevalence": 0.019999999552965164,
+      "n_pos": 20,
+      "precision": 0.14285714285714285,
+      "recall": 0.3,
+      "specificity": 0.963265306122449,
+      "f1": 0.19354838709677416
+    },
+    "Pleural_Thickening": {
+      "auroc": 0.7709451486429905,
+      "auroc_ci": [
+        0.6824025641025642,
+        0.8618692041700631
+      ],
+      "auprc": 0.08226729216336812,
+      "prevalence": 0.027000000700354576,
+      "n_pos": 27,
+      "precision": 0.09090909090909091,
+      "recall": 0.2962962962962963,
+      "specificity": 0.9177800616649537,
+      "f1": 0.1391304347826087
+    },
+    "Hernia": {
+      "auroc": 0.8688688688688689,
+      "auroc_ci": [
+        0.8503503503503503,
+        0.8883883883883884
+      ],
+      "auprc": 0.007518796992481203,
+      "prevalence": 0.0010000000474974513,
+      "n_pos": 1,
+      "precision": 0.0,
+      "recall": 0.0,
+      "specificity": 0.996996996996997,
+      "f1": 0.0
+    }
+  },
+  "macro_f1_at_mid": 0.21756231344912463,
+  "calibration": {
+    "ece_raw": 0.023039973934646695,
+    "ece_T": 0.030688497272516206,
+    "classwise_ece_raw": 0.028603891856502743,
+    "classwise_ece_T": 0.03400866015662925,
+    "brier_raw": 0.03399603068828583,
+    "brier_T": 0.03474804275833828,
+    "reliability_raw": [
+      [
+        0.0198887400329113,
+        0.01601908728480339,
+        11736
+      ],
+      [
+        0.14443446695804596,
+        0.08752327412366867,
+        1074
+      ],
+      [
+        0.24498729407787323,
+        0.10261193662881851,
+        536
+      ],
+      [
+        0.344143807888031,
+        0.1438596546649933,
+        285
+      ],
+      [
+        0.44480082392692566,
+        0.24260355532169342,
+        169
+      ],
+      [
+        0.5471097230911255,
+        0.33695653080940247,
+        92
+      ],
+      [
+        0.6474480032920837,
+        0.3877550959587097,
+        49
+      ],
+      [
+        0.7398434281349182,
+        0.5277777910232544,
+        36
+      ],
+      [
+        0.844321608543396,
+        0.44999998807907104,
+        20
+      ],
+      [
+        0.9196615815162659,
+        0.6666666865348816,
+        3
+      ]
+    ],
+    "reliability_T": [
+      [
+        0.022917881465564265,
+        0.014676157385110855,
+        11379
+      ],
+      [
+        0.14336824773245294,
+        0.07398373633623123,
+        1230
+      ],
+      [
+        0.24359596016966398,
+        0.10764430463314056,
+        641
+      ],
+      [
+        0.34496283010008066,
+        0.13202247023582458,
+        356
+      ],
+      [
+        0.4451945566111993,
+        0.2319587618112564,
+        194
+      ],
+      [
+        0.5461250816716876,
+        0.3400000035762787,
+        100
+      ],
+      [
+        0.6474381034593918,
+        0.4285714328289032,
+        49
+      ],
+      [
+        0.7399548924298281,
+        0.5454545617103577,
+        33
+      ],
+      [
+        0.8507237800755549,
+        0.3125,
+        16
+      ],
+      [
+        0.9134265481226198,
+        1.0,
+        2
+      ]
+    ]
+  },
+  "subgroups": {
+    "sex=M": {
+      "n": 582,
+      "mean_auroc": 0.8273257121840293,
+      "ci": [
+        0.7953001101746511,
+        0.8471302547507011
+      ]
+    },
+    "sex=F": {
+      "n": 418,
+      "mean_auroc": 0.8149489532533105,
+      "ci": [
+        0.7813043340406638,
+        0.8420060034972582
+      ]
+    },
+    "view=PA": {
+      "n": 775,
+      "mean_auroc": 0.8190763614276985,
+      "ci": [
+        0.790877272967461,
+        0.8400312774749656
+      ]
+    },
+    "view=AP": {
+      "n": 225,
+      "mean_auroc": 0.77352483819471,
+      "ci": [
+        0.73835774148952,
+        0.8125118392770916
+      ]
+    },
+    "age<40": {
+      "n": 371,
+      "mean_auroc": 0.8574263278127229,
+      "ci": [
+        0.8226077626553414,
+        0.8936800468769113
+      ]
+    },
+    "age40-59": {
+      "n": 388,
+      "mean_auroc": 0.8085790532748968,
+      "ci": [
+        0.7762150547083181,
+        0.835469509521421
+      ]
+    },
+    "age>=60": {
+      "n": 241,
+      "mean_auroc": 0.7693847749763003,
+      "ci": [
+        0.7326066081092057,
+        0.8031858929958581
+      ]
+    }
+  },
+  "selective": {
+    "coverage": [
+      1.0,
+      0.9,
+      0.8,
+      0.7,
+      0.6,
+      0.5
+    ],
+    "mc_std": [
+      0.8190499510469417,
+      0.7882437735858279,
+      0.7305552421537453,
+      0.6954875454628061,
+      0.6456957110543017,
+      0.6613022168481054
+    ],
+    "random": [
+      0.8190499510469417,
+      0.8202994823717927,
+      0.8253508465540197,
+      0.8163029277766487,
+      0.8316822400487341,
+      0.8478157000361836
+    ]
+  },
+  "tiers": {
+    "with_mc": {
+      "ppv_present": 0.4583333432674408,
+      "ppv_possible": 0.13694915175437927,
+      "npv_absent": 0.9796443581581116,
+      "n_present": 96,
+      "n_possible": 1475,
+      "per_class": {
+        "Atelectasis": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.22797927260398865,
+          "n_possible": 193,
+          "npv_absent": 0.9553903341293335,
+          "recall_present_or_possible": 0.55
+        },
+        "Cardiomegaly": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.44117647409439087,
+          "n_possible": 34,
+          "npv_absent": 0.9751552939414978,
+          "recall_present_or_possible": 0.38461538461538464
+        },
+        "Effusion": {
+          "ppv_present": 0.52173912525177,
+          "n_present": 69,
+          "ppv_possible": 0.2602739632129669,
+          "n_possible": 73,
+          "npv_absent": 0.9825174808502197,
+          "recall_present_or_possible": 0.7857142857142857
+        },
+        "Infiltration": {
+          "ppv_present": 0.29629629850387573,
+          "n_present": 27,
+          "ppv_possible": 0.07952622324228287,
+          "n_possible": 591,
+          "npv_absent": 0.926701545715332,
+          "recall_present_or_possible": 0.6626506024096386
+        },
+        "Mass": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.12977099418640137,
+          "n_possible": 131,
+          "npv_absent": 0.9827387928962708,
+          "recall_present_or_possible": 0.53125
+        },
+        "Nodule": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.13274335861206055,
+          "n_possible": 113,
+          "npv_absent": 0.9627959728240967,
+          "recall_present_or_possible": 0.3125
+        },
+        "Pneumonia": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.11428571492433548,
+          "n_possible": 35,
+          "npv_absent": 0.9896373152732849,
+          "recall_present_or_possible": 0.2857142857142857
+        },
+        "Pneumothorax": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.2916666567325592,
+          "n_possible": 48,
+          "npv_absent": 0.9789915680885315,
+          "recall_present_or_possible": 0.4117647058823529
+        },
+        "Consolidation": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.05882352963089943,
+          "n_possible": 51,
+          "npv_absent": 0.9789251685142517,
+          "recall_present_or_possible": 0.13043478260869565
+        },
+        "Edema": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.04545454680919647,
+          "n_possible": 22,
+          "npv_absent": 0.9907975196838379,
+          "recall_present_or_possible": 0.1
+        },
+        "Emphysema": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.1764705926179886,
+          "n_possible": 51,
+          "npv_absent": 0.9905163049697876,
+          "recall_present_or_possible": 0.5
+        },
+        "Fibrosis": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.1428571492433548,
+          "n_possible": 42,
+          "npv_absent": 0.9853861927986145,
+          "recall_present_or_possible": 0.3
+        },
+        "Pleural_Thickening": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.09090909361839294,
+          "n_possible": 88,
+          "npv_absent": 0.9791666865348816,
+          "recall_present_or_possible": 0.2962962962962963
+        },
+        "Hernia": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.0,
+          "n_possible": 3,
+          "npv_absent": 0.9989969730377197,
+          "recall_present_or_possible": 0.0
+        }
+      }
+    },
+    "without_mc": {
+      "ppv_present": 0.4307692348957062,
+      "ppv_possible": 0.1318528801202774,
+      "npv_absent": 0.9796443581581116,
+      "n_present": 130,
+      "n_possible": 1441,
+      "per_class": {
+        "Atelectasis": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.22797927260398865,
+          "n_possible": 193,
+          "npv_absent": 0.9553903341293335,
+          "recall_present_or_possible": 0.55
+        },
+        "Cardiomegaly": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.44117647409439087,
+          "n_possible": 34,
+          "npv_absent": 0.9751552939414978,
+          "recall_present_or_possible": 0.38461538461538464
+        },
+        "Effusion": {
+          "ppv_present": 0.5,
+          "n_present": 84,
+          "ppv_possible": 0.22413793206214905,
+          "n_possible": 58,
+          "npv_absent": 0.9825174808502197,
+          "recall_present_or_possible": 0.7857142857142857
+        },
+        "Infiltration": {
+          "ppv_present": 0.30434781312942505,
+          "n_present": 46,
+          "ppv_possible": 0.07167831808328629,
+          "n_possible": 572,
+          "npv_absent": 0.926701545715332,
+          "recall_present_or_possible": 0.6626506024096386
+        },
+        "Mass": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.12977099418640137,
+          "n_possible": 131,
+          "npv_absent": 0.9827387928962708,
+          "recall_present_or_possible": 0.53125
+        },
+        "Nodule": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.13274335861206055,
+          "n_possible": 113,
+          "npv_absent": 0.9627959728240967,
+          "recall_present_or_possible": 0.3125
+        },
+        "Pneumonia": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.11428571492433548,
+          "n_possible": 35,
+          "npv_absent": 0.9896373152732849,
+          "recall_present_or_possible": 0.2857142857142857
+        },
+        "Pneumothorax": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.2916666567325592,
+          "n_possible": 48,
+          "npv_absent": 0.9789915680885315,
+          "recall_present_or_possible": 0.4117647058823529
+        },
+        "Consolidation": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.05882352963089943,
+          "n_possible": 51,
+          "npv_absent": 0.9789251685142517,
+          "recall_present_or_possible": 0.13043478260869565
+        },
+        "Edema": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.04545454680919647,
+          "n_possible": 22,
+          "npv_absent": 0.9907975196838379,
+          "recall_present_or_possible": 0.1
+        },
+        "Emphysema": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.1764705926179886,
+          "n_possible": 51,
+          "npv_absent": 0.9905163049697876,
+          "recall_present_or_possible": 0.5
+        },
+        "Fibrosis": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.1428571492433548,
+          "n_possible": 42,
+          "npv_absent": 0.9853861927986145,
+          "recall_present_or_possible": 0.3
+        },
+        "Pleural_Thickening": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.09090909361839294,
+          "n_possible": 88,
+          "npv_absent": 0.9791666865348816,
+          "recall_present_or_possible": 0.2962962962962963
+        },
+        "Hernia": {
+          "ppv_present": null,
+          "n_present": 0,
+          "ppv_possible": 0.0,
+          "n_possible": 3,
+          "npv_absent": 0.9989969730377197,
+          "recall_present_or_possible": 0.0
+        }
+      }
+    }
+  }
+}

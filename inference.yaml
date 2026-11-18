@@ -1,0 +1,16 @@
+data:
+  work_dir: work_nih_10000
+  cache_size: 256
+  use_cache: false
+model:
+  backbone: densenet121
+  pretrained: false
+  dropout: 0.2
+train:
+  img_size: 224
+  num_workers: 0
+  amp: false
+  multi_gpu: false
+  ema: 0
+calib:
+  mc_samples: 30

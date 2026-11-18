@@ -1,0 +1,62 @@
+{
+  "seed": 42,
+  "data": {
+    "nih_root": "/content/xrayguard_colab/nih_10000_selection",
+    "work_dir": "/content/drive/MyDrive/XRayGuard_10000/work",
+    "cache_dir": "/content/xrayguard_cache",
+    "cache_size": 256,
+    "val_frac": 0.1,
+    "use_cache": true,
+    "clahe": false,
+    "val_list": "/content/xrayguard_colab/nih_10000_selection/val_list.txt"
+  },
+  "model": {
+    "backbone": "densenet121",
+    "pretrained": true,
+    "dropout": 0.2
+  },
+  "train": {
+    "img_size": 224,
+    "epochs": 8,
+    "batch_size": 32,
+    "lr": 0.0002,
+    "weight_decay": 0.0001,
+    "warmup_frac": 0.05,
+    "loss": "bce",
+    "ema": 0,
+    "amp": true,
+    "num_workers": 2,
+    "patience": 3,
+    "multi_gpu": false,
+    "max_train_batches": null,
+    "rot_deg": 7.0,
+    "crop_scale_min": 0.8
+  },
+  "calib": {
+    "precision_target": 0.6,
+    "min_support": 20,
+    "mc_samples": 30,
+    "uncert_quantile": 0.9
+  },
+  "evidence": {
+    "cam_thresh": 0.5,
+    "bilateral_frac": 0.3
+  },
+  "report": {
+    "llm_model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "llm_batch": 8,
+    "llm_max_new_tokens": 220,
+    "max_regen": 1,
+    "allow_extent": false
+  },
+  "eval": {
+    "n_boot": 500,
+    "report_n": 1000,
+    "llm_n": 500,
+    "batch_size": 64
+  },
+  "iu": {
+    "root": "/kaggle/input/chest-xrays-indiana-university",
+    "n": null
+  }
+}

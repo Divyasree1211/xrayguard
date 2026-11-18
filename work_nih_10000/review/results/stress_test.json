@@ -1,0 +1,96 @@
+{
+  "n_reports": 500,
+  "clean_false_alarm_rate": 0.0,
+  "per_type": {
+    "UNSUPPORTED_FINDING": {
+      "n": 500,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "LATERALITY": {
+      "n": 168,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "OVERCONFIDENT": {
+      "n": 370,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "CONTRADICTION": {
+      "n": 38,
+      "detection_recall": 1.0,
+      "collateral_flags": 1.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "OMISSION": {
+      "n": 38,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "UNSUPPORTED_SEVERITY": {
+      "n": 363,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "GLOBAL_CONTRADICTION": {
+      "n": 38,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "PRIOR_REFERENCE": {
+      "n": 500,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "UNSUPPORTED_DEVICE": {
+      "n": 500,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "UNSUPPORTED_MEASUREMENT": {
+      "n": 500,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.47,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "UNVERIFIABLE_FINDING": {
+      "n": 500,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    },
+    "UNSUPPORTED_NEGATIVE": {
+      "n": 500,
+      "detection_recall": 1.0,
+      "collateral_flags": 0.0,
+      "repair_rate": 1.0,
+      "label_faithful_after_repair": 1.0
+    }
+  },
+  "overall": {
+    "n": 4015,
+    "detection_recall": 1.0,
+    "repair_rate": 1.0,
+    "label_faithful_after_repair": 1.0
+  }
+}

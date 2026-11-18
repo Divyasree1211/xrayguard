@@ -1,0 +1,74 @@
+{
+  "seed": 42,
+  "n_images": 10000,
+  "n_patients": 10000,
+  "source": "https://www.kaggle.com/datasets/nih-chest-xrays/data",
+  "test_sampling": "1000 random previously unused official test patients; one random image each",
+  "excluded_pilot_test_patients": 212,
+  "training_sampling": "Label-enriched, one image per patient",
+  "splits": {
+    "train": {
+      "images": 8000,
+      "patients": 8000,
+      "labels": {
+        "Atelectasis": 752,
+        "Cardiomegaly": 284,
+        "Effusion": 698,
+        "Infiltration": 1165,
+        "Mass": 453,
+        "Nodule": 517,
+        "Pneumonia": 500,
+        "Pneumothorax": 258,
+        "Consolidation": 286,
+        "Edema": 227,
+        "Emphysema": 247,
+        "Fibrosis": 271,
+        "Pleural_Thickening": 310,
+        "Hernia": 80,
+        "No Finding": 4659
+      }
+    },
+    "val": {
+      "images": 1000,
+      "patients": 1000,
+      "labels": {
+        "Atelectasis": 112,
+        "Cardiomegaly": 38,
+        "Effusion": 127,
+        "Infiltration": 181,
+        "Mass": 70,
+        "Nodule": 74,
+        "Pneumonia": 57,
+        "Pneumothorax": 47,
+        "Consolidation": 40,
+        "Edema": 28,
+        "Emphysema": 40,
+        "Fibrosis": 37,
+        "Pleural_Thickening": 40,
+        "Hernia": 16,
+        "No Finding": 531
+      }
+    },
+    "test": {
+      "images": 1000,
+      "patients": 1000,
+      "labels": {
+        "Atelectasis": 80,
+        "Cardiomegaly": 39,
+        "Effusion": 70,
+        "Infiltration": 83,
+        "Mass": 32,
+        "Nodule": 48,
+        "Pneumonia": 14,
+        "Pneumothorax": 34,
+        "Consolidation": 23,
+        "Edema": 10,
+        "Emphysema": 18,
+        "Fibrosis": 20,
+        "Pleural_Thickening": 27,
+        "Hernia": 1,
+        "No Finding": 698
+      }
+    }
+  }
+}

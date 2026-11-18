@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="XRayGuard chest X-ray report generation research prototype.">
+  <title>XRayGuard | Chest X-ray Report</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/theme.css">
+  <script src="/assets/report.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <span class="brand"><span class="brand-mark" aria-hidden="true">+</span>XRayGuard</span>
+      <nav class="main-nav" aria-label="Main navigation"><a href="/" aria-current="page">Analyze</a><a href="/results">Evaluation</a><a href="/about">Our approach</a></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="intro hero">
+      <div class="hero-copy">
+      <p class="eyebrow">EXPLAINABLE CHEST X-RAY ANALYSIS</p>
+      <h1>Chest X-ray<br><span>analysis workspace</span></h1>
+      <p>Explore model findings on your X-ray, compare scores, and generate a draft report.</p>
+      <p class="research-note">Research demonstration. Model flags need expert review. Low scores do not rule out disease.</p>
+      </div>
+      <aside class="model-card" aria-labelledby="model-backbone">
+        <div class="model-card-top"><span>ACTIVE MODEL</span><span id="model-status" class="model-state" data-state="loading">Checking…</span></div>
+        <h2 id="model-backbone">Connecting to model</h2>
+        <p id="model-run-label" class="model-run-label">Loading run information</p>
+        <dl class="engine-facts"><div><dt>Detection</dt><dd id="model-finding-count">14 findings</dd></div><div><dt>Visualisation</dt><dd>CAM</dd></div><div><dt>Uncertainty</dt><dd id="model-sample-count">—</dd></div></dl>
+        <a href="/results" class="model-evaluation-link">View model evaluation <span aria-hidden="true">↗</span></a>
+      </aside>
+    </div>
+
+    <section class="demo-strip" aria-labelledby="demo-heading"><div><h2 id="demo-heading">Try an NIH example</h2><p class="support">Selected teaching cases. Live predictions use the same model as your uploads.</p></div><div id="demo-examples" class="demo-examples"></div><p id="demo-status" role="status" class="support"></p></section>
+
+    <ol class="workflow" aria-label="Analysis workflow"><li data-stage="upload" class="is-active"><span>01</span><div><strong>Choose an image</strong><small>Upload or select an example</small></div></li><li data-stage="analyze"><span>02</span><div><strong>Run the model</strong><small>Score the NIH findings</small></div></li><li data-stage="review"><span>03</span><div><strong>Review the evidence</strong><small>Explore the report and heat maps</small></div></li></ol>
+
+    <div class="workspace">
+      <section class="panel" aria-labelledby="image-heading">
+        <div class="panel-heading"><span class="section-number" aria-hidden="true">01</span><h2 id="image-heading">Your chest X-ray</h2></div>
+        <p class="support">Use a de-identified frontal image (PA or AP).</p>
+
+        <form id="upload-form">
+          <div id="upload-drop" class="image-area upload-drop" role="button" tabindex="0" aria-label="Choose an X-ray image" aria-describedby="formats">
+            <div id="empty-image">
+              <span class="upload-mark" aria-hidden="true">↑</span>
+              <strong>Drop your X-ray here</strong>
+              <p>or click to choose a PNG or JPEG</p>
+            </div>
+            <img id="preview" alt="Uploaded chest X-ray preview" hidden>
+          </div>
+          <label for="image">Image file</label>
+          <input id="image" name="image" type="file" accept="image/png,image/jpeg" aria-describedby="formats" required>
+          <p class="support" id="formats">PNG or JPEG, up to 10 MB</p>
+          <p class="support privacy-note">This app processes uploads in memory. It does not save an upload history.</p>
+          <details id="reference-panel" class="reference-panel" hidden><summary>NIH reference labels for this example</summary><p id="reference-labels"></p><p id="reference-context" class="support"></p></details>
+          <button id="generate" type="submit">Generate report</button>
+          <p id="status" role="status" aria-live="polite"></p>
+          <button id="reset-analysis" class="secondary-button" type="button">Clear analysis</button>
+        </form>
+
+        <section id="heatmap-panel" class="heatmap-panel" aria-labelledby="heatmap-heading" hidden>
+          <h3 id="heatmap-heading">Explore the X-ray</h3>
+          <p class="support">Select a model flag to view the regions influencing that prediction.</p>
+          <div id="heatmap-controls" class="heatmap-controls" hidden>
+            <label for="finding-select">Finding to explore</label>
+            <select id="finding-select"></select>
+            <div class="opacity-label"><label for="overlay-opacity">Heat map visibility</label><output id="opacity-value" for="overlay-opacity">100%</output></div>
+            <input id="overlay-opacity" type="range" min="0" max="100" value="100" aria-describedby="overlay-help">
+            <p id="overlay-help" class="support">Slide to 0% to compare with the processed X-ray.</p>
+          </div>
+          <p class="support" id="heatmap-caption"></p>
+          <div id="heatmap-frame" class="image-area overlay-area" hidden>
+            <img id="processed-image" alt="Processed X-ray aligned with the heat map">
+            <img id="heatmap" alt="Combined model activation over the processed chest X-ray">
+          </div>
+          <div id="heatmap-legend" class="heatmap-legend" hidden>
+            <span>Lower activation</span><span class="heatmap-scale" aria-hidden="true"></span><span>Higher</span>
+          </div>
+          <p class="support">Heat maps show model activation, not confirmed lesions or exact disease boundaries. Location estimates are coarse.</p>
+        </section>
+      </section>
+
+      <section class="panel report" aria-labelledby="report-heading">
+        <section id="flag-summary" class="flag-summary" aria-labelledby="flag-heading" hidden>
+          <p class="eyebrow">IMAGE ANALYSIS</p>
+          <h2 id="flag-heading">Findings to review</h2>
+          <p id="flag-description" class="support"></p>
+          <div id="flag-list"></div>
+        </section>
+        <div class="panel-heading"><span class="section-number" aria-hidden="true">02</span><h2 id="report-heading">Draft report</h2></div>
+        <div id="report-placeholder" class="report-empty"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="10" y="5" width="28" height="38" rx="4"/><path d="M17 16h14M17 23h14M17 30h8"/></svg><h3>Ready when you are</h3><p>Your findings and impression will appear here after analysis.</p><span>Choose an example above to try the full workflow.</span></div>
+        <div id="report-content" hidden>
+          <p id="report-meta" class="support"></p>
+          <section class="report-section" aria-labelledby="findings-heading">
+            <h3 id="findings-heading">Findings</h3>
+            <p id="findings"></p>
+          </section>
+          <section class="report-section impression" aria-labelledby="impression-heading">
+            <h3 id="impression-heading">Impression</h3>
+            <p id="impression"></p>
+          </section>
+          <div id="verification-summary" class="verification-summary"></div>
+          <div class="report-actions"><button type="button" id="download-report" class="secondary-button">Download report</button><button type="button" id="download-evidence" class="secondary-button">Export evidence</button><button type="button" id="print-report" class="secondary-button">Print / Save PDF</button></div>
+        </div>
+      </section>
+    </div>
+
+    <section id="charts-panel" class="panel charts-panel" aria-labelledby="charts-heading" hidden>
+      <div class="evidence-header"><div><p class="eyebrow">PREDICTION BREAKDOWN</p><h2 id="charts-heading">Finding scores and uncertainty</h2></div><span class="support">All 14 NIH findings</span></div>
+      <p class="support">Each finding has a different reporting threshold. A model score is not a diagnosis.</p>
+      <div class="chart-grid">
+        <figure class="chart-figure"><figcaption>Finding scores <span>Score and reporting threshold</span></figcaption>
+          <div class="chart-legend"><span><i class="legend-flag"></i>Flagged</span><span><i class="legend-below"></i>Below threshold</span><span><i class="legend-threshold"></i>Threshold</span></div>
+          <svg id="scores-chart" viewBox="0 0 620 590" role="img" aria-labelledby="scores-title scores-description"><title id="scores-title">Scores for all 14 findings</title><desc id="scores-description">Bars show model scores. A dark vertical mark shows each finding's reporting threshold. Exact values appear in the evidence table.</desc></svg>
+        </figure>
+        <figure class="chart-figure"><figcaption>Prediction variability <span>Standard deviation in percentage points</span></figcaption>
+          <p class="support chart-explainer">Variation across repeated dropout samples of the classifier head. Smaller variation does not establish correctness.</p>
+          <svg id="uncertainty-chart" viewBox="0 0 620 590" role="img" aria-labelledby="uncertainty-title uncertainty-description"><title id="uncertainty-title">Prediction variability for all findings</title><desc id="uncertainty-description">Bars show standard deviation across Monte Carlo dropout samples. Exact values appear in the evidence table.</desc></svg>
+        </figure>
+      </div>
+    </section>
+
+    <section id="evidence-panel" class="panel evidence-panel" aria-labelledby="evidence-heading" hidden>
+      <div class="evidence-header">
+        <h2 id="evidence-heading">Model evidence</h2>
+        <p class="support" id="model-run"></p>
+      </div>
+      <p class="support">Each finding has its own reporting threshold. “Above assertion threshold” is a model wording tier, not clinical confirmation. “Below threshold” does not rule out a finding.</p>
+      <div class="table-scroll" tabindex="0" role="region" aria-label="Finding probabilities and uncertainty">
+        <table>
+          <caption class="sr-only">All 14 findings, ordered by predicted probability</caption>
+          <thead><tr>
+            <th scope="col">Finding</th><th scope="col">Probability</th>
+            <th scope="col">Uncertainty (SD)</th><th scope="col">Report threshold</th>
+            <th scope="col">Model status</th><th scope="col">Location</th>
+          </tr></thead>
+          <tbody id="evidence-rows"></tbody>
+        </table>
+      </div>
+      <p class="support" id="uncertainty-note"></p>
+    </section>
+
+    <section id="verifier-panel" class="panel verifier-panel" aria-labelledby="verifier-heading" hidden>
+      <p class="eyebrow">CONSISTENCY DEMONSTRATION</p><h2 id="verifier-heading">Challenge the report verifier</h2>
+      <p class="support">Try unsupported wording against this image’s model evidence. The checker identifies rule violations and shows a corrected report. It cannot determine whether the model’s diagnosis is true.</p>
+      <label for="challenge-text">Draft wording to check</label><textarea id="challenge-text" rows="3" maxlength="8000">No acute cardiopulmonary abnormality. Heart size is normal. A central venous catheter is present. Unchanged from the prior study.</textarea>
+      <button id="verify-draft" type="button">Check wording against evidence</button><p id="verify-status" role="status" class="support"></p>
+      <div id="verifier-result" hidden><h3>Rule violations</h3><ul id="verifier-issues"></ul><h3>Corrected findings</h3><p id="corrected-findings"></p><h3>Corrected impression</h3><p id="corrected-impression"></p><details><summary>Correction trace</summary><ol id="correction-log"></ol></details><button id="download-trace" type="button" class="secondary-button">Download verification trace</button></div>
+    </section>
+
+    <footer>Capstone research prototype. For demonstration only. Dataset: NIH ChestX-ray14. <a href="/about">Methods and limitations</a></footer>
+  </main>
+</body>
+</html>

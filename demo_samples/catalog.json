@@ -1,0 +1,58 @@
+[
+  {
+    "id": "single",
+    "title": "Held-out pneumonia case",
+    "description": "Inspect a correctly flagged reference finding on an unseen test patient.",
+    "file": "single.png",
+    "dataset_labels": [
+      "Pneumonia",
+      "Consolidation"
+    ],
+    "experiment_split": "test",
+    "source": "NIH ChestX-ray14",
+    "reference_note": "Held-out patient from the saved test cohort. Selected for demonstration after evaluation. NLP-derived labels are not independent expert adjudication. Image resized to 256 pixels for the offline demo.",
+    "source_image": "00017710_009.png"
+  },
+  {
+    "id": "missed",
+    "title": "A missed reference finding",
+    "description": "Inspect a test case where the model missed the NIH pneumonia label.",
+    "file": "missed.png",
+    "dataset_labels": [
+      "Pneumonia"
+    ],
+    "experiment_split": "test",
+    "source": "NIH ChestX-ray14",
+    "reference_note": "Held-out patient from the saved test cohort. Selected for demonstration after evaluation. NLP-derived labels are not independent expert adjudication. Image resized to 256 pixels for the offline demo.",
+    "source_image": "00018319_000.png"
+  },
+  {
+    "id": "multiple",
+    "title": "Several model flags",
+    "description": "Explore separate activation maps and review uncertainty.",
+    "file": "multiple.png",
+    "dataset_labels": [
+      "Cardiomegaly",
+      "Emphysema",
+      "Pneumothorax"
+    ],
+    "experiment_split": "image outside selection; patient split: outside selection",
+    "source": "NIH ChestX-ray14",
+    "reference_note": "NLP-derived dataset labels. Examples are illustrative and are not an independent clinical assessment.",
+    "source_image": "00000013_040.png"
+  },
+  {
+    "id": "inconclusive",
+    "title": "Below-threshold example",
+    "description": "See why low scores produce an inconclusive assessment.",
+    "file": "inconclusive.png",
+    "dataset_labels": [
+      "Cardiomegaly",
+      "Emphysema"
+    ],
+    "experiment_split": "train",
+    "source": "NIH ChestX-ray14",
+    "reference_note": "NLP-derived dataset labels. Examples are illustrative and are not an independent clinical assessment.",
+    "source_image": "00000123_000.png"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "run": "nih10000_bce_gpu",
+  "checkpoint": "work_nih_10000/runs/nih10000_bce_gpu/best.pt",
+  "sha256": "f7227fe3f353f66a836b6c3161fb6031859d1be30d7242c43efb8b0d774d1b61",
+  "bytes": 28485961
+}
